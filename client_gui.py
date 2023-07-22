@@ -2,17 +2,13 @@ from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, StringVar, END
 import socket
 import threading
-import pyglet
-
-pyglet.font.add_file('Iceberg-Regular.ttf')
-
-
-c=socket.socket()
+import os
+cwd= os.getcwd()
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"/Users/sayyamsancheti/Desktop/chat/build/assets/frame1")
+ASSETS_PATH = OUTPUT_PATH / Path(fr"{cwd}/assets/frame1")
 
-
+c=socket.socket()
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
@@ -171,7 +167,7 @@ entry_3 = Entry(
     bg="#FFFFFF",
     fg="#000716",
     highlightthickness=0,
-    font=("Iceberg-Regular",32),
+    font=("Iceberg-Regular",28),
     textvariable=ip
 )
 entry_3.place(
