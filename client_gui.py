@@ -6,7 +6,7 @@ import os
 cwd= os.getcwd()
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(fr"{cwd}/assets/frame1")
+ASSETS_PATH = OUTPUT_PATH / Path(fr"{cwd}/assets/frame0")
 
 c=socket.socket()
 
