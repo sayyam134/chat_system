@@ -3,9 +3,11 @@ from get_ip import get_ip_address
 import socket
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage,END,StringVar
 import threading
-import pyglet
+import os
+cwd= os.getcwd()
 
-pyglet.font.add_file('Iceberg-Regular.ttf')
+OUTPUT_PATH = Path(__file__).parent
+ASSETS_PATH = OUTPUT_PATH / Path(fr"{cwd}/assets/frame1")
 PORT=9999
 SERVER=str(get_ip_address())
 s= socket.socket()
@@ -34,8 +36,7 @@ def recive():
     display(recived_msg)
     
 
-OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"/Users/sayyamsancheti/Desktop/Final_Chat/build/assets/frame1")
+
 
 
 def relative_to_assets(path: str) -> Path:
